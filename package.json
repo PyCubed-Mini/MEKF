@@ -1,0 +1,11 @@
+{
+  "urls": [
+    ["PycubedMEKF/__init__.py", "github:Pycubed-Mini/PycubedMEKF/src/__init__.py"],
+    ["PycubedMEKF/mathutils.py", "github:Pycubed-Mini/PycubedMEKF/src/mathutils.py"],
+    ["PycubedMEKF/mekf.py", "github:Pycubed-Mini/PycubedMEKF/src/mekf.py"]
+  ],
+  "deps": [
+    "github:Pycubed-Mini/MODL"
+  ],
+  "version": "0.0.1"
+}

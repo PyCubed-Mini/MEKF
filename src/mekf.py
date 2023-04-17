@@ -40,7 +40,6 @@ def propagate_state(q, β, ω, δt):
     r = (ω - β) / linalg.norm(ω - β)
     return quaternion_mul(q, concat([[cos(θ / 2)], r * sin(θ / 2)]))
 
-
 def step(
     state,
     ω,
@@ -107,6 +106,6 @@ def step(
     P_u = e3 + e4
     # Pᵤ = (I(6) - LC) * Pₚ * (I(6) - LC)' + LVL'
 
-    state.q = q_u
-    state.β = β_u
-    state.P = P_u
+    # Normalize quaternion to prevent build up of error
+    q_u = q_u / linalg.norm(q_u) 
+    return State(q_u, β_u, P_u)

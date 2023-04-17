@@ -88,7 +88,6 @@ end
         nr_mag = normalize(nr_mag)
         nr_sun = normalize(nr_sun)
         MEKF.step(ω, nr_mag, nr_sun, br_mag, br_sun, δt)
-        # q_err = state.attitude - MEKF.attitude
         q_err = qErr(state.attitude, MEKF.attitude)
         bias = norm(MEKF.gyro_bias)
         push!(hist, [

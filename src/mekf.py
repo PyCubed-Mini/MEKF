@@ -74,7 +74,7 @@ def step(
     A = block([
         [R,              (-δt * I(3))],
         [zeros((3, 3)),  I(3)]])
-    P_p = matmul(A, matmul(P, A.transpose())) + W
+    P_p = matmul(A, matmul(state.P, A.transpose())) + W
 
     # Innovation
     Q = quaternion_to_rotation_matrix(q_p).transpose()

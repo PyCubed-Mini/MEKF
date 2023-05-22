@@ -19,7 +19,7 @@ class MEKF:
     def __init__(self, initial_state=default_state):
         self._state = initial_state
 
-    def step(self, w, nr_mag, nr_sun, br_mag, br_sun, dt):
+    def update(self, w, nr_mag, nr_sun, br_mag, br_sun, dt):
         self._state = step(self._state, w, dt, nr_mag, nr_sun, br_mag, br_sun)
     
     @property

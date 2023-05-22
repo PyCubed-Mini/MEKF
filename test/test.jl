@@ -87,7 +87,7 @@ end
         br_mag = randomMatrix(0.001) * ᵇQⁿ * normalize(nr_mag)
         nr_mag = normalize(nr_mag)
         nr_sun = normalize(nr_sun)
-        MEKF.step(ω, nr_mag, nr_sun, br_mag, br_sun, δt)
+        MEKF.update(ω, nr_mag, nr_sun, br_mag, br_sun, δt)
         q_err = qErr(state.attitude, MEKF.attitude)
         bias = norm(MEKF.gyro_bias)
         push!(hist, [
